@@ -7,13 +7,13 @@
 X = int(input("Введите X "))
 Y = int(input("Введите Y "))
 
-if X>0 and Y>0:
+if (X>=0 and Y>0) or (X>0 and Y>=0):
     print("1")
-elif X<0 and Y>0:
+elif (X<=0 and Y>0) or (X<0 and Y>=0):
     print("2")
-elif X<0 and Y<0:
+elif (X<=0 and Y<0) or (X<0 and Y<=0):
     print("3")
-elif X>0 and Y<0:
+elif (X>=0 and Y<0) or (X>0 and Y<=0):
     print("4")
 else:
     print("значение не удовлетаоряет условию задачи")
