@@ -5,8 +5,12 @@
 n = int(input("Введите число "))
 count =1
 mult = 1
-while count <= n:
-    mult=mult*count
-    count=count+1
-    print (mult)
+
+if n<1:
+    print ("Данное значение не удовлетворяет условию задачи,введите число больше или равное 1")
+else:
+    while count <= n:
+        mult=mult*count
+        count=count+1
+        print (mult)
  

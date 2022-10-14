@@ -7,12 +7,14 @@
 
 n = int(input("Введите число N "))
 summ=0
-
-list = []
-for i in range(n) : 
-    temp=i+1
-    i=(1+ 1/temp)**temp
-    print(i) 
-    summ=summ+i
+if n<1:
+    print ("Данное значение не удовлетворяет условию задачи,введите число больше или равное 1")
+else:
+    list = []
+    for i in range(n) : 
+        temp=i+1
+        i=(1+ 1/temp)**temp
+        print(i) 
+        summ=summ+i
     
-print("Сумма  = " +str(summ))
+    print("Сумма  = " +str(summ))
