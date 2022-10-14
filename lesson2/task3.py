@@ -13,8 +13,8 @@ else:
     list = []
     for i in range(n) : 
         temp=i+1
-        i=(1+ 1/temp)**temp
-        print(i) 
-        summ=summ+i
-    
+        temp1=(1+ 1/temp)**temp
+        list.append(temp1)
+        summ=summ+temp1
+    print(list)
     print("Сумма  = " +str(summ))
