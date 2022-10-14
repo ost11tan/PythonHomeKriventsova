@@ -16,7 +16,7 @@ else:
         list.append(random.randint(-n, n))
     print(list)
 
-    summ=0
+    summ=1
     
 
     #f = open('D:\учеба\PythonHomeKriventsova\lesson2\file.txt', 'r')   переименовала файл тк ругался на \f
@@ -26,7 +26,7 @@ else:
     
     for i in range (len(l)):
         k=int(l[i])
-        summ=summ+list[k]
+        summ=summ*list[k]
     print(summ)
     
 
