@@ -2,15 +2,17 @@
 # Пример:
 #[2, 3, 5, 9, 3] -> на нечётных позициях элементы 3 и 9, ответ: 12
 
+import random
+
+
 n = int(input("Введите число N "))
 summ=0
 if n<1:
     print ("Данное значение не удовлетворяет условию задачи,введите число больше или равное 1")
 else:
-    print("Введите числовые знчеия списка,\nпосле каждого элемента нажмите Enter")
     list = []
     for i in range(n) : 
-        list.append(float(input('>> ')))
+        list.append(random.randint(0, 50))
     print(list)
     
     summ=0
@@ -22,4 +24,3 @@ else:
             print(str(list[i])+"")
     
     print("Ответ:"+str(summ))
-
