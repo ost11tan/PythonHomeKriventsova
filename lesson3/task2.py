@@ -3,6 +3,7 @@
 #[2, 3, 4, 5, 6] => [12, 15, 16];
 #[2, 3, 5, 6] => [12, 15]
 
+import random
 n = int(input("Введите число N "))
 summ=0
 if n<1:
@@ -11,7 +12,7 @@ else:
     print("Введите числовые знчеия списка,\nпосле каждого элемента нажмите Enter")
     list = []
     for i in range(n) : 
-        list.append(float(input('>> ')))
+        list.append(random.randint(0, 50)) 
     print(list)
     
     list2=[]
