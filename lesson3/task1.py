@@ -2,8 +2,11 @@
 # Пример:
 #[2, 3, 5, 9, 3] -> на нечётных позициях элементы 3 и 9, ответ: 12
 
-import random
 
+import random
+#import datetime
+#b1=10
+#b2=20
 
 n = int(input("Введите число N "))
 summ=0
@@ -12,7 +15,11 @@ if n<1:
 else:
     list = []
     for i in range(n) : 
-        list.append(random.randint(0, 50))
+        #a = (datetime.datetime.now() - datetime.datetime(1, 1, 1, 0, 0)).total_seconds()
+        #a=a%1
+        #a=round(b1+(b2-b1)*a)
+        #list.append(a)
+        list.append(random.randint(0, 50))   #Закоментирована попытка вставить код из семинара,выдает массив одинаковых рандомных значений
     print(list)
     
     summ=0
