@@ -6,13 +6,11 @@
 k= int(input("Введите число k "))
 
 
-fibonachi=[]
+fibonachi=[1,1]
+
 
 if k>=0:
-    for i in range(k):
-        if i<2:
-            start=1
-            fibonachi.append(start)
+    for i in range(2,k):
         if i>=2:
             fib_sum=fibonachi[i-1]+fibonachi[i-2]
             fibonachi.append(fib_sum)
