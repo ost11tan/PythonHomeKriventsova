@@ -5,17 +5,12 @@ n = int(input("Введите число N "))
 if n<0:
     print("Число не является натуральным")
 else:
-    list=[]
-    for i in range (1,n):
-        num=n%i
-        if num==0:
-            list.append(i)
-            n=n/i  
+    
+    list=[i for i in range(1,n) if n%i==0]
                 
     if len(list)==1:
         list.append(int(n))
-    #print (list)
-    
+
     if len(list)>2:
         list2=[]
         list2.append(list[0])
