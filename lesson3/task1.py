@@ -3,6 +3,7 @@
 #[2, 3, 5, 9, 3] -> на нечётных позициях элементы 3 и 9, ответ: 12
 
 
+from functools import reduce
 import random
 #import datetime
 #b1=10
@@ -23,11 +24,12 @@ else:
     print(list)
     
     summ=0
-    
-    print("На нечетных позициях находятся числа :")
+    new_list=[]
     for i in range(n):
         if i%2==1:
-            summ=summ+list[i]
-            print(str(list[i])+"")
+            new_list.append(list[i])
+            
+    print("На нечетных позициях находятся числа :"+str(new_list))        
+    summa = reduce((lambda x, y: x + y), new_list)
     
-    print("Ответ:"+str(summ))
+    print("Ответ:"+str(summa))
