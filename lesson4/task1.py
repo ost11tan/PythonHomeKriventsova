@@ -15,8 +15,10 @@ i=1
 
 while ((round(list[i-1],d) != round(list[i],d))):
     i=i+1
-    num=num - 4/k + 4/(k+2)
-    list.append(num)
+    
+    numer=lambda num,k :num - 4/k + 4/(k+2)
+    list.append(numer(num,k))
+    num=numer(num,k)
     k=k+4
     
 #print (list)
