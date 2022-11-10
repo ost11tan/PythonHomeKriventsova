@@ -20,10 +20,12 @@ else:
         
     min=list[0]
     max=list[0]
-    
+
     for i in range(n):
-        if list[i]<min and list[i]>0:
-            min=list[i]
+        if list[i]>0:
+            temp=list[i]
+            min_number = lambda min, temp: min if min < temp else temp
+            min=min_number(min,temp)
         if list[i]>max:
             max=list[i]
     print("Разница между максимальным и минимальным значениеми дробных частей " + str(round((max-min),2)))
