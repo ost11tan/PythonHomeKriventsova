@@ -1,13 +1,16 @@
+
 def ex_strok():
+    global num_strok
     num_strok=int(input("Введите номер строки "))
     if num_strok<=0:
         num_strok=int(input("Введите номер строки больше 0 "))
         
+    global table
     with open('telefone.csv', 'r') as file:
-        temp = [line.strip() for line in file]
+        table = [line.strip() for line in file]
     file.close()
     
-    stroka=str(temp[num_strok])
+    stroka=str(table[num_strok])
     #print(stroka) 
     
     lst=[]
