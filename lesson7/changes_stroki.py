@@ -27,4 +27,4 @@ def ch_strok():
     
 
 
-ch_strok()
+#ch_strok()
