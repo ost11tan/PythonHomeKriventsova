@@ -9,7 +9,31 @@ token='5931103429:AAEsZN6RJ_QLVkFRAtyupMBUjkJ_F6pa240'
 bot=telebot.TeleBot(token)
 
 
+    
+contacts=[None]*5 
+def get_num(message): 
+    contacts[0]= message.text
+    bot.send_message(message.from_user.id, "Введите фамилию:")
+    bot.register_next_step_handler(message, get_surname);   
+def get_surname(message): 
+    contacts[1]= message.text
+    bot.send_message(message.from_user.id, "Введите имя:")
+    bot.register_next_step_handler(message, get_name)
 
+def get_name(message):
+    contacts[2]= message.text
+    bot.send_message(message.from_user.id, "Введите Телефон: ")
+    bot.register_next_step_handler(message, get_number)
+        
+def get_number(message):
+    contacts[3]= message.text
+    bot.send_message(message.from_user.id, "Введите описание: ")
+    bot.register_next_step_handler(message, get_comment)
+    
+def get_comment(message):
+    contacts[4]= message.text
+    print(contacts)
+    add.newstring(contacts)    
     
 @bot.message_handler(commands=['start'])
 def start(message):
@@ -36,7 +60,9 @@ def func(message):
         bot.send_message(message.chat.id, text=list)
         
     elif message.text == "Добавить запись.":
-        add.reading(token) 
+        bot.send_message(message.from_user.id, "Введите номер записи:")
+        bot.register_next_step_handler(message, get_num); 
+        
         
     elif message.text == "Найти запись.":
         search.Search_Entry('employees.csv')
@@ -46,7 +72,7 @@ def func(message):
         bot.send_message(message.chat.id, text="функция для корректировки записи")
     elif message.text == "Удалить запись.":
         bot.send_message(message.chat.id, text="Введите элемент имя сотрудника для удаления данных о нём из БД")
-        delete.delete_str('employees.csv', get_text_messages(message))
+        delete.delete_str('employees.csv', start1(message))
     
     elif (message.text == "Вернуться в главное меню"):
         markup = types.ReplyKeyboardMarkup(resize_keyboard=True)
@@ -58,3 +84,9 @@ def func(message):
 def get_text_messages(message):
     return message.text
 bot.polling(none_stop=True)
+
+
+
+
+
+
