@@ -1,10 +1,5 @@
-def Search_Entry(file):
-
-    print(f'Введите элемент имя сотрудника для поиска в БД: ')
-    name = input()
-   
+def Search_Entry(file,name): 
     with open(file, 'r', encoding="utf-8") as data:
-    #with open(file, 'r') as data:
-            for line in data:
-                if name in line: 
-                    print(line)
+        for line in data:
+            if name in line: 
+                return line

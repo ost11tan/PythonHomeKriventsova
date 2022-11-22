@@ -1,24 +1,8 @@
-def Edit_Entry(file):
-
-    print(f'Введите элемент имя сотрудника для изменения данных о нём в БД: ')
-    name = input()
-    lines = []
-    
-    with open(file, 'r', encoding="utf-8") as data:
-    #with open(file, 'r') as data:
-                if not name in line: 
-                    lines += line
-                else:
-                    line = line.split(", ")
-                    print(line)
-                    old = int(input("Нометр элемента для замены: "))
-                    new = input("На что заменить: ")
-                    line[old - 1] = new
-                    line = ", ".join(line)
-                    lines += line
-
-    with open(file, 'w', encoding="utf-8") as data:
-    #with open(file, 'w') as data:    
-            data.writelines(lines)
-        
-    print('Изменение произведено...')
+import list_to_stroka_sy
+def Edit_Entry(file,old_s,new):
+    new_s=list_to_stroka_sy.lst_to_str(new)
+    with open(file) as f:
+        s=f.read()
+    with open(file, 'w') as f:
+        s=s.replace(old_s,new_s)
+        f.write(s)
