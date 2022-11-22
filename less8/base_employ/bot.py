@@ -82,7 +82,7 @@ def get_number1(message):
 def get_comment1(message):
     contacts[4]= message.text
     print(contacts)
-    edit.Edit_Entry('employees.csv',old,contacts)
+    edit.Edit_Entry(old,contacts)
 
 
 
