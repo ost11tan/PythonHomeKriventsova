@@ -6,7 +6,7 @@ import edit
 import add
 import search
 import list_to_stroka_sy
-token='5931103429:AAEsZN6RJ_QLVkFRAtyupMBUjkJ_F6pa240'
+token='токен'
 bot=telebot.TeleBot(token)
 
 
