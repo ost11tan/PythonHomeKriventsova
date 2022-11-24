@@ -11,7 +11,7 @@ bot=telebot.TeleBot(token)
 
 
    
-contacts=[None]*5 
+contacts=[None]*6
 def get_num(message): 
     contacts[0]= message.text
     bot.send_message(message.from_user.id, "Введите фамилию:")
@@ -28,11 +28,16 @@ def get_name(message):
         
 def get_number(message):
     contacts[3]= message.text
-    bot.send_message(message.from_user.id, "Введите описание: ")
-    bot.register_next_step_handler(message, get_comment)
+    bot.send_message(message.from_user.id, "Введите Должность: ")
+    bot.register_next_step_handler(message, get_job)
     
-def get_comment(message):
+def get_job(message):
     contacts[4]= message.text
+    bot.send_message(message.from_user.id, "Введите отдел: ")
+    bot.register_next_step_handler(message, get_Department)
+    
+def get_Department(message):
+    contacts[5]= message.text
     print(contacts)
     add.newstring(contacts)    
     
@@ -76,10 +81,15 @@ def get_nam1(message):
         
 def get_number1(message):
     contacts[3]= message.text
-    bot.send_message(message.from_user.id, "Введите описание: ")
-    bot.register_next_step_handler(message, get_comment1)
+    bot.send_message(message.from_user.id, "Введите Должность: ")
+    bot.register_next_step_handler(message, get_job1)
     
-def get_comment1(message):
+def get_job1(message):
+    contacts[4]= message.text
+    bot.send_message(message.from_user.id, "Введите отдел: ")
+    bot.register_next_step_handler(message, get_Department1)
+    
+def get_Department1(message):
     contacts[4]= message.text
     print(contacts)
     edit.Edit_Entry(old,contacts)
