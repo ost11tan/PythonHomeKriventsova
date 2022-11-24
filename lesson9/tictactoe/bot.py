@@ -53,7 +53,8 @@ def  imputForX(message,res=True):
     bot.send_message(message.from_user.id, "☑️ Введите номер строки")
     bot.register_next_step_handler(message, get_rowX)
 def get_rowX(message):
-    row=int(message.text)-1
+    row=message.text
+    row=int(row)-1
     if row>=0 and row<=2:
         bot.send_message(message.from_user.id, "☑️ Введите номер стoлбца")
         bot.register_next_step_handler(message,get_colomnX)
