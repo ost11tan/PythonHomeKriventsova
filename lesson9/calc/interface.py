@@ -1,7 +1,6 @@
 import telebot
 from telebot import types # для указание типов  
 import Sum
-import Sumi
 import sub
 import div
 import model_mult
