@@ -3,7 +3,7 @@ from telebot import types # для указание типов
 import list_to_stroka
 import test
 import random
-token='5915737731:AAFdzztSK2naeQyhfTvmKm_3MLiDjza-9DA'
+token='токен'
 bot=telebot.TeleBot(token)
 
 
