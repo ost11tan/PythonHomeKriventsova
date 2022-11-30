@@ -6,7 +6,7 @@ import div
 import model_mult
 import logger
 import print1
-token='5659797931:AAFZJ1_49peLhVmkqZJEAxkna8BSlDvqEpo'
+token='токен'
 bot=telebot.TeleBot(token)
 
 
